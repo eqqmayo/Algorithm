@@ -1,5 +1,9 @@
 import Foundation
 
 func solution(_ n:Int) -> Int {
-    return String(n).map { Int(String($0))! }.reduce(0, +)
+    var result = 0
+    for i in String(n) {
+        result += Int(i)
+    }
+    return result
 }
