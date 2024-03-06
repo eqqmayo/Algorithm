@@ -1,9 +1,7 @@
-func solution(_ x:Int, _ n:Int) -> [Int] {
-    var arr = [Int]()
-    var num = x
-    for _ in 1...n {
-        arr.append(num)
-        num += x
+func solution(_ x:Int, _ n:Int) -> [Int64] {
+    var arr = [Int64]()
+    for i in 1...n {
+        arr.append(Int64(x * i))
     }
     return arr
 }
