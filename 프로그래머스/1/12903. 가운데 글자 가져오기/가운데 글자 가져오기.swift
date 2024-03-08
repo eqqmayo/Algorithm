@@ -1,9 +1,10 @@
-func solution(_ s:String) -> String {
-    let arr = s.map { String($0) }
-    let index = arr.count / 2
+func solution(_ s: String) -> String {
+    let arr = Array(s)
+    let mid = arr.count / 2
+    
     if arr.count % 2 != 0 {
-        return arr[Int(index)]
+        return String(arr[mid])
     } else {
-        return arr[index - 1] + arr[index]
+        return String(arr[mid - 1...mid])
     }
 }
