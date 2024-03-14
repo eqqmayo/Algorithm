@@ -1,22 +1,18 @@
-func solution(_ s:String, _ n:Int) -> String {
-    var ascii = s.map { Int(UnicodeScalar(String($0))!.value) }
+func solution(_ s:String, _ n: Int) -> String {
+    var asciiArr = s.utf8.map { Int($0) }
     var result = ""
-    for i in ascii {
-        if i == 32 {
-            result += String(UnicodeScalar(i)!)
-        } else if 65...90 ~= i {
-            if i+n > 90 {
-                result += String(UnicodeScalar(i-26+n)!)
-            } else {
-                result += String(UnicodeScalar(i+n)!)
-            }
-        } else {
-            if i+n > 122 {
-                result += String(UnicodeScalar(i-26+n)!)
-            } else {
-                result += String(UnicodeScalar(i+n)!)
-            }
+    for i in 0..<asciiArr.count {
+        switch asciiArr[i] {
+        case 65...90:
+            asciiArr[i] = (asciiArr[i] + n - 65) % 26 + 65
+        case 97...122:
+            asciiArr[i] = (asciiArr[i] + n - 97) % 26 + 97
+        default:
+            break
         }
+    }
+    for ascii in asciiArr {
+        result += String(UnicodeScalar(ascii)!)
     }
     return result
 }
