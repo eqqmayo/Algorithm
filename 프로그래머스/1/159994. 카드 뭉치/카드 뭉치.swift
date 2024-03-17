@@ -3,15 +3,16 @@ import Foundation
 func solution(_ cards1:[String], _ cards2:[String], _ goal:[String]) -> String {
     var arr1 = [Int]()
     var arr2 = [Int]()
+    var (i, j) = (0, 0)
     
     for word in goal {
-        if cards1.contains(word) {
-            arr1.append(cards1.firstIndex(of: word)!)
+        if cards1[i] == word {
+            i += i < cards1.count-1 ? 1 : 0
+        } else if cards2[j] == word {
+            j += j < cards2.count-1 ? 1 : 0
         } else {
-            arr2.append(cards2.firstIndex(of: word)!)
-        } 
+            return "No"
+        }
     }
-    
-    if arr1 == Array(0..<arr1.count) && arr2 == Array(0..<arr2.count) { return "Yes" }
-    return "No"
+    return "Yes"
 }
