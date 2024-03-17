@@ -1,11 +1,6 @@
 import Foundation
 
 func solution(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
-    if score.count < m { return 0 }
-    var arr = score.sorted(by: >)
-    var minSum = 0
-    for i in 1...arr.count / m {
-        minSum += arr[i * m - 1]
-    }
-    return minSum * m
+    let s = score.sorted(by: >)
+    return stride(from: m-1, to: score.count, by: m).reduce(0) { $0 + s[$1] } * m
 }
