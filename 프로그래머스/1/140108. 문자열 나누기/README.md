@@ -1,10 +1,10 @@
 # [level 1] 문자열 나누기 - 140108 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/140108) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=swift) 
 
 ### 성능 요약
 
-메모리: 16.4 MB, 시간: 3.84 ms
+메모리: 16.2 MB, 시간: 2.18 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 03월 29일 16:36:25
+2024년 03월 29일 17:02:18
 
 ### 문제 설명
 
