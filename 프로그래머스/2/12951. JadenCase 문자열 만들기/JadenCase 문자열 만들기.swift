@@ -1,13 +1,10 @@
 func solution(_ s:String) -> String {
+    var arr = s.lowercased().map { String($0) }
     
-    let letters = Array(s)
-    var isBeforeBlank = true
-    var result: String = ""
-    
-    for letter in letters {
-        result += (isBeforeBlank ? letter.uppercased() : letter.lowercased())
-        isBeforeBlank = (letter == " ")
+    for i in 0..<arr.count {
+        if i == 0 || arr[i - 1] == " " {
+            arr[i] = arr[i].uppercased()
+        }
     }
-    
-    return result
+    return arr.joined()
 }
