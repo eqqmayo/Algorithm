@@ -1,28 +1,31 @@
 import Foundation
 
 func solution(_ s:String) -> Int {
-    var str = Array(s)
-    var answer = 0
+    var rotate = Array(s)
+    var count = 0
     
-    func check(_ array:Array<Character>) -> Bool {
-        var checkArray = [Character]()
-        
-        let braces: [Character:Character] = ["{":"}", "[":"]", "(":")"]
-        
-        for i in array {
-            if !checkArray.isEmpty && braces[checkArray.last!] == i  {
-                checkArray.removeLast()
-            } else {
-                checkArray.append(i)
-            }
+    func correct(_ arr: [Character]) -> Bool {
+        var stack = [Character]()
+        for i in arr {
+            if i == "[" || i == "{" || i == "(" {
+                if stack == [] || stack.last == "[" || stack.last == "{" || stack.last == "(" {
+                    stack.append(i)
+                }
+            } else if i == "]" && stack.last == "[" {
+                stack.removeLast()
+            } else if i == "}" && stack.last == "{" {
+                stack.removeLast()
+            } else if i == ")" && stack.last == "(" {
+                stack.removeLast()
+            } else { return false }
         }
-        return checkArray.isEmpty
+        return stack == [] ? true : false
     }
-    for _ in str {
-        str.append(str.removeFirst())
-        if check(str) {
-            answer += 1
-        }
+    
+    for _ in s {
+        rotate.append(rotate.removeFirst())
+        if correct(rotate) { count += 1 }
     }
-    return answer
+    
+    return count
 }
