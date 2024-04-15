@@ -6,15 +6,16 @@ func solution(_ priorities:[Int], _ location:Int) -> Int {
     
     while arr != [] {
         var max = arr.max()!
-        idx -= 1
+        
         if arr[0] != max {
             arr.append(arr.removeFirst())
-            if idx == -1 { idx = arr.count - 1 }
+            if idx == 0 { idx = arr.count }
         } else {
             answer += 1
             arr.removeFirst()
-            if idx == -1 { break }
+            if idx == 0 { break }
         }
+        idx -= 1
     }
     return answer
 }
