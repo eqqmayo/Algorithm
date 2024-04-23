@@ -1,10 +1,10 @@
 # [level 2] 롤케이크 자르기 - 132265 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/132265) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/132265?language=swift) 
 
 ### 성능 요약
 
-메모리: 143 MB, 시간: 1366.51 ms
+메모리: 154 MB, 시간: 1896.30 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 04월 23일 15:22:55
+2024년 04월 23일 15:32:34
 
 ### 문제 설명
 

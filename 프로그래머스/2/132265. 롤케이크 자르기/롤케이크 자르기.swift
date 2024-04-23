@@ -13,7 +13,7 @@ func solution(_ topping:[Int]) -> Int {
         older[i] = olderSet.count
     }
     
-    for i in stride(from: topping.count - 1, to: -1, by: -1) {
+    for i in Array(0..<topping.count).sorted(by: >) {
         youngerSet.insert(topping[i])
         younger[i] = youngerSet.count
         if older[i - 1] == younger[i] { answer += 1 }
